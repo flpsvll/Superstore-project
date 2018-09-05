@@ -1,2 +1,18 @@
 <h1>Subs#show</h1>
 <p>Find me in app/views/subs/show.html.erb</p>
+
+<h1><%= @sub.name %> - <%= @topic.name %></h1>
+<p><%= @topic.body %></p>
+<%= link_to 'Edit Topic', edit_sub_topic_path([@sub, @topic]) %>
+<%= link_to 'Delete Topic', [@sub, @topic], method: :delete %>
+<%= link_to 'Back To Topics', sub_topics_path(@sub) %>
+
+
+<h1><%= @sub.name %></h1>
+<hr />
+<p>What would you like to do?</p>
+<%= link_to 'View Topics', sub_topics_path(@sub) %>
+<br />
+<%= link_to 'Edit Sub', edit_sub_path(@sub) %>
+<br />
+<%= link_to 'Delete Sub', @sub, method: :delete %>
